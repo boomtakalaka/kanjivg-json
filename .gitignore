@@ -6,3 +6,5 @@ kanjivg-*xml.gz
 kanjivg-*.zip
 stripped/*
 *.egg-info
+node_modules
+dist

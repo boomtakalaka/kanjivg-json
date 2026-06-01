@@ -1,0 +1,31 @@
+{
+  "name": "kanjivg-json",
+  "version": "1.0.0",
+  "description": "KanjiVG data as JSON",
+  "homepage": "https://github.com/boomtakalaka/kanjivg-json#readme",
+  "bugs": {
+    "url": "https://github.com/boomtakalaka/kanjivg-json/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boomtakalaka/kanjivg-json.git"
+  },
+  "license": "SEE LICENSE IN COPYING",
+  "author": "Ulrich Apel, Takayuki Ibaraki",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "convert": "node dist/index.js",
+    "clean": "rm -r kanji_json && rm -r dist",
+    "dev": "tsx src/index.ts"
+  },
+  "private": true,
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "cheerio": "^1.2.0",
+    "commander": "^15.0.0",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3"
+  }
+}
