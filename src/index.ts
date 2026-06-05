@@ -50,7 +50,11 @@ for (const file of files) {
     const rootSvgElement = $('svg');
     const {width, height} = rootSvgElement.attr() ?? {};
     const pathElements = $('path').toArray();
-    pathElements.sort((a, b) => a.attribs['id']!.localeCompare(b.attribs['id']!));
+    pathElements.sort((a, b) => {
+        const aIntId = parseInt(a.attribs['id']!.replace(/.*-s/, ''));
+        const bIntId = parseInt(b.attribs['id']!.replace(/.*-s/, ''));
+        return aIntId - bIntId;
+    });
     const strokes = pathElements.map(el => el.attribs['d']!);
 
     const destFile = path.resolve(destDir, file.replace('.svg', '.json'));
